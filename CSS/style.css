@@ -1,0 +1,341 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    font-family: "Poppins";
+    background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202209/2914/CzV4rHJL4ky9LXHLwCTc8XTj.png?w=940&thumb=false);
+    background-size: cover;
+    overflow: hidden;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #00000069;
+    z-index: -1;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5em 1em;
+
+}
+
+header .left,
+header .right{
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+}
+
+header .left a {
+    font-size: 2rem;
+}
+
+header .left a,
+header .right a {
+    margin-right: 80px;
+}
+header a{
+    color: #adadad;
+    display: flex;
+}
+
+header .right .time{
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+
+
+#carousel {
+    position: relative;
+    height: 75%;
+}
+
+#carousel > div{
+    position: absolute;
+    transition: transform 0.4s, left 0.4s, opacity 1s, z-index 0s;
+    opacity: 1;
+
+}
+
+#carousel section img{
+    width: 90px;
+    transition: width 0.4s;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#carousel .hideLeft{
+    left: -155px;
+    opacity: 0;
+    
+
+}
+
+#carousel .hideLeft img{
+    width: 90px;
+
+}
+
+#carousel .hideRight{
+    left: 615px;
+    opacity: 0;
+    
+}
+#corousel .hideRight img{
+    width: 200px;
+
+}
+#carousel .prev{
+    z-index: 5;
+    left: 65px;
+    
+
+}
+
+#carousel .prev img{
+    width: 90px;
+
+}
+
+#carousel .prevLeftSecond{
+    z-index: 4;
+    left: -43px;
+    
+    opacity: .7;
+
+}
+
+#carousel .prevLeftSecond img{
+    width: 90px;
+
+}
+
+#carousel .selected{
+    z-index: 1;
+    left: 175px;
+    height: 90%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#carousel .selected section img{
+    width: 200px;
+    border: 3px solid transparent;
+    box-shadow: 0px 0px 0px 3px rgb(216, 216, 216);
+}
+
+#carousel .selected section span {
+    color: rgb(212, 212, 212);
+    font-size: 1.8rem;
+    font-weight: 200;
+    margin-left: 5px;
+    position: relative;
+    bottom: 30px;
+}
+
+#carousel :not(.selected) section span,
+#carousel :not(.selected) .game-info{
+    display: none;
+    
+}
+
+#carousel .selected .game-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    bottom: 30px;
+    position: relative;
+}
+
+#carousel .next{
+    z-index: 5;
+    left: 395px;
+    
+
+}
+
+#carousel .next img{
+    width: 90px;
+
+}
+
+#carousel .nextRightSecond {
+    z-index: 4;
+    left: 505px;
+    
+    opacity: .7;
+
+}
+
+#carousel .nextRightSecond img{
+    width: 90px;
+
+}
+
+#carousel .selected .game-info .left img{
+    height: 80px;
+    margin-top: 20px;
+}
+
+#carousel .selected .game-info .left h1{
+    color: white;
+    font-weight: 200;
+    font-size: 1.5rem;
+    margin: 0px 0px 30px 0px;
+}
+
+#carousel .selected .game-info .left .button-left{
+    display: flex;
+}
+
+#carousel .selected .game-info .left .button-left a {
+    background-color: rgba(255, 255, 255, 0.219);
+    color: white;
+    font-size: 2rem;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+#carousel .selected .game-info .left .button-left a:nth-child(1){
+    padding: 10px 120px;
+}
+
+#carousel .selected .game-info .left .button-left a:nth-child(2){
+    height: 65px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#carousel .selected .game-info .right .cover{
+    height: 230px;
+    width: 230px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 0;
+}
+#carousel .selected .game-info .right .cover:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 45%, rgb(0,0,0) 85%);
+    z-index: 0;
+}
+
+#carousel .selected .game-info .right .cover span{
+    z-index: 1;
+}
+
+#carousel .selected .game-info .right .cover span.completo{
+    color: white;
+    border: 2px solid white;
+    width: fit-content;
+    padding: 2px 8px;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+#carousel .selected .game-info .right .cover span.update{
+    color: black;
+    background-color: white;
+    border: 2px solid white;
+    width: fit-content;
+    padding: 2px 8px;
+    margin: 10px 0 17px 10px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+
+#carousel .selected .game-info .right .trophy{
+    width: 300px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.603);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#carousel .selected .game-info .right .trophy i{
+    color: #acacac;
+    font-size: 2.5rem;
+}
+
+#carousel .selected .game-info .right .trophy div{
+    display: flex;
+    flex-direction: column;
+}
+
+#carousel .selected .game-info .right .trophy .progress span:nth-child(1),
+#carousel .selected .game-info .right .trophy .win span:nth-child(1){
+    color: rgb(182, 182, 182);
+}
+
+#carousel .selected .game-info .right .trophy .progress span:nth-child(2),
+#carousel .selected .game-info .right .trophy .win span:nth-child(2){
+    color: white;
+    font-size: 2em;
+}
+
+#carousel .selected#spiderman-game .right .cover{
+    background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202011/0402/C784xeOFo2wViCf4m5bxgoeH.png);
+
+}
+
+#carousel .selected#miles-game .right .cover{
+    background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202008/1020/T45iRN1bhiWcJUzST6UFGBvO.png);
+
+}
+
+#carousel .selected#demon-game .right .cover{
+    background-image: url(https://image.api.playstation.com/vulcan/img/rnd/202011/1717/GemRaOZaCMhGxQ9dRhnQQyT5.png);
+
+}
+
+#carousel .selected#dead-space-game .right .cover{
+    background-image: url(https://jovemnerd.com.br/wp-content/uploads/2022/10/dead_space_poster__g10b7k0t-760x950.jpg);
+
+}
+
+#carousel .selected#lis-game .right .cover{
+    background-image: url(https://image.api.playstation.com/cdn/UP0082/CUSA08479_00/vUR2r1WTNUrnu5WtdDfo7yWwK3S8Tpvb.png);
+
+}
+
+#carousel .selected#witcher-game .right .cover{
+    background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png);
+
+}
+
+#carousel .selected#tlou-game .right .cover{
+    background-image: url(https://image.api.playstation.com/vulcan/ap/rnd/202206/0720/eEczyEMDd2BLa3dtkGJVE9Id.png);
+
+}
